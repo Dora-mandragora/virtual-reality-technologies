@@ -1,14 +1,17 @@
-<<<<<<< HEAD
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бомб (хз, в одном файле, или как)
+public class ObjectBase : MonoBehaviour //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ (пїЅпїЅ, пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅ)
 {
     private SpriteRenderer spriteRenderer;
     public List<Sprite> sprites;
     public Transform position;
     private Rigidbody2D rigidbody;
+
+    private bool mouseEntered;
 
     public int force;
 
@@ -29,47 +32,60 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
     // Update is called once per frame
     void Update()
     {
-        
+        if(mouseEntered)
+        {
+            Debug.Log("Ent");
+            if (Input.GetMouseButton(0))
+            {
+                Destroy(this.gameObject);
+            }
+        }
     }
     private void Force()
     {
         force = Random.Range(15, 20);
-        rigidbody.AddForce(position.up * force, ForceMode2D.Impulse);
+        var vector = new Vector2(Random.RandomRange(-0.25f, 0.25f), 1);
+        rigidbody.AddForce(vector * force, ForceMode2D.Impulse);
     }
-}
-=======
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бомб (хз, в одном файле, или как)
+    private void OnMouseEnter()
+    {
+        mouseEntered = true;
+    }
+
+    private void OnMouseExit()
+    {
+        mouseEntered = false;
+    }
+
+
+    /* private void OnMouseDrag()
+     {
+         Destroy(this.gameObject);
+     }
+ */
+
+    //abstract public void dest();
+
+    private void OnMouseDown()
+    {
+        Destroy(this.gameObject);
+    }
+
+
+
+
+
+}
+
+
+public class Fruit : ObjectBase
 {
 
-    private SpriteRenderer spriteRenderer;
-    public List<Sprite> sprites;
-    private Rigidbody2D rigidbody;
-    public Transform transform;
-    public int force = 30;//заменить на рандом
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        rigidbody = this.GetComponent<Rigidbody2D >();
-        transform = this.GetComponent<Transform>();
-        spriteRenderer = this.GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = sprites[0];//заменить на рандом
-        this.Force();
-    }
-
-    private void Force()
-    {
-        rigidbody.AddForce(transform.up * force, ForceMode2D.Impulse);//transform.up * force заменить на рандомный угол
-    }
-
-    // Update is called once per frame
-    void Update()
+    public void OnDestroy()
     {
         
     }
 }
->>>>>>> parent of d703308 (update spawn/objectBase)
+
