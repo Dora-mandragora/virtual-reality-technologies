@@ -1,10 +1,8 @@
-
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectBase : MonoBehaviour //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ (пїЅпїЅ, пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅ)
+public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бомб (хз, в одном файле, или как)
 {
     private SpriteRenderer spriteRenderer;
     public List<Sprite> sprites;
@@ -88,4 +86,3 @@ public class Fruit : ObjectBase
         
     }
 }
-
