@@ -20,8 +20,12 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
         spriteRenderer = GetComponent<SpriteRenderer>();
         position = GetComponent<Transform>();
         rigidbody = GetComponent<Rigidbody2D>();
-        var spriteNum = Random.Range(0, sprites.Count - 1);
-        spriteRenderer.sprite = sprites[spriteNum];
+        var spriteNum = 0;
+        if (sprites.Count != 0)
+        {
+            spriteNum = Random.Range(0, sprites.Count - 1);
+            spriteRenderer.sprite = sprites[spriteNum];
+        }
 
         Force();
     }
@@ -42,7 +46,7 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
     private void Force()
     {
         force = Random.Range(15, 20);
-        var vector = new Vector2(Random.RandomRange(-0.25f, 0.25f), 1);
+        var vector = new Vector2(Random.Range(-0.25f, 0.25f), 1);
         rigidbody.AddForce(vector * force, ForceMode2D.Impulse);
     }
 
