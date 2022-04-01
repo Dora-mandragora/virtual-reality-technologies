@@ -99,6 +99,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectBase Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8462882517661387263, guid: 5e1f5d82a8f0d4c4ba31ffeb367d95be, type: 3}
+      propertyPath: rotationSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8475690644718609477, guid: 5e1f5d82a8f0d4c4ba31ffeb367d95be, type: 3}
       propertyPath: m_Enabled
       value: 1
