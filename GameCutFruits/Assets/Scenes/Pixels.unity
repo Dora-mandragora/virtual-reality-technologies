@@ -859,6 +859,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bomb
       objectReference: {fileID: 0}
+    - target: {fileID: 7069913863617407000, guid: b5af36b76ee926349aa4c22c12654e9b, type: 3}
+      propertyPath: sprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069913863617407000, guid: b5af36b76ee926349aa4c22c12654e9b, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 674686a46b853254fbbed7494dbcdb68, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5af36b76ee926349aa4c22c12654e9b, type: 3}
 --- !u!1001 &1293407588
@@ -959,6 +967,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1288811419635655336, guid: 2722b4f9951b5f54191be8fa3564b922, type: 3}
+      propertyPath: m_Size.x
+      value: 4.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288811419635655336, guid: 2722b4f9951b5f54191be8fa3564b922, type: 3}
+      propertyPath: m_Size.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288811419635655336, guid: 2722b4f9951b5f54191be8fa3564b922, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1288811419635655337, guid: 2722b4f9951b5f54191be8fa3564b922, type: 3}
       propertyPath: m_RootOrder
       value: 6
