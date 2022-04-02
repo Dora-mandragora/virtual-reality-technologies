@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprites: []
   position: {fileID: 0}
+  animator: {fileID: 0}
   force: 20
 --- !u!50 &3927874616326408983
 Rigidbody2D:
@@ -179,5 +180,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0

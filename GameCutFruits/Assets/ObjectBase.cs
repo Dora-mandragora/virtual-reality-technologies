@@ -9,6 +9,8 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
     public Transform position;
     private Rigidbody2D rigidbody;
 
+    public Animator animator;
+
     private bool mouseEntered;
 
     public int force;
@@ -39,7 +41,10 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
             Debug.Log("Ent");
             if (Input.GetMouseButton(0))
             {
-                Destroy(this.gameObject);
+                Debug.Log("Ent2");
+                animator.SetBool("isCutting", true);
+                StartCoroutine(DestroyObj());
+                //Destroy(this.gameObject);
             }
         }
     }
@@ -71,6 +76,13 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
 
     private void OnMouseDown()
     {
+        
+       // Destroy(this.gameObject);
+    }
+
+    IEnumerator DestroyObj()
+    {        
+        yield return new WaitForSeconds(10);
         Destroy(this.gameObject);
     }
 

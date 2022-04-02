@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5854044379177692750, guid: 5e1f5d82a8f0d4c4ba31ffeb367d95be, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 3837289862475966653}
+    - target: {fileID: 5854044379177692750, guid: 5e1f5d82a8f0d4c4ba31ffeb367d95be, type: 3}
       propertyPath: sprites.Array.size
       value: 9
       objectReference: {fileID: 0}
@@ -110,6 +114,11 @@ PrefabInstance:
     - target: {fileID: 8475690644718609477, guid: 5e1f5d82a8f0d4c4ba31ffeb367d95be, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 7a1d5611dcb392e45a27e82ed7552966, type: 2}
+      objectReference: {fileID: 9100000, guid: f297823de7c36484c9cab0487b9d7c24, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e1f5d82a8f0d4c4ba31ffeb367d95be, type: 3}
+--- !u!95 &3837289862475966653 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8475690644718609477, guid: 5e1f5d82a8f0d4c4ba31ffeb367d95be, type: 3}
+  m_PrefabInstance: {fileID: 4674588463022705912}
+  m_PrefabAsset: {fileID: 0}

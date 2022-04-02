@@ -32,7 +32,7 @@ public class SpawnerBase : MonoBehaviour
     IEnumerator DestroyObj()
     {
         yield return new WaitForSeconds(TimeSpawn);
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 
    
