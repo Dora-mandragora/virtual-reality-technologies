@@ -21,20 +21,12 @@ public class SpawnerBase : MonoBehaviour
     {
         StartCoroutine(SpawnObj());
     }
+
     IEnumerator SpawnObj()
     {
         yield return new WaitForSeconds(TimeSpawn);
         Instantiate(obj, position.position, Quaternion.identity);
         Repeat();
-    }
-
-
-    IEnumerator DestroyObj()
-    {
-        yield return new WaitForSeconds(TimeSpawn);
-        Destroy(this.gameObject);
-    }
-
-   
+    }  
 
 }

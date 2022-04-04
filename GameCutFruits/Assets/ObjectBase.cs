@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бомб (хз, в одном файле, или как)
 {
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
     public List<Sprite> sprites;
     public Transform position;
-    private Rigidbody2D rigidbody;
+    protected Rigidbody2D rigidbody;
 
     public Animator animator;
 
-    private bool mouseEntered;
+    protected bool mouseEntered;
 
     public int force;
 
@@ -28,7 +28,6 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
             spriteNum = Random.Range(0, sprites.Count - 1);
             spriteRenderer.sprite = sprites[spriteNum];
         }
-
         Force();
     }
     
@@ -48,19 +47,19 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
             }
         }
     }
-    private void Force()
+    protected void Force()
     {
         force = Random.Range(15, 20);
         var vector = new Vector2(Random.Range(-0.25f, 0.25f), 1);
         rigidbody.AddForce(vector * force, ForceMode2D.Impulse);
     }
 
-    private void OnMouseEnter()
+    void OnMouseEnter()
     {
         mouseEntered = true;
     }
 
-    private void OnMouseExit()
+    void OnMouseExit()
     {
         mouseEntered = false;
     }
@@ -74,13 +73,13 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
 
     //abstract public void dest();
 
-    private void OnMouseDown()
+    void OnMouseDown()
     {
         
        // Destroy(this.gameObject);
     }
 
-    IEnumerator DestroyObj()
+    protected IEnumerator DestroyObj()
     {        
         yield return new WaitForSeconds(10);
         Destroy(this.gameObject);
@@ -90,15 +89,4 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
 
 
 
-}
-
-
-public class Fruit : ObjectBase
-{
-
-
-    public void OnDestroy()
-    {
-        
-    }
 }
