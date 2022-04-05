@@ -10,6 +10,7 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
     protected Rigidbody2D rigidbody;
 
     public Animator animator;
+    public Transform trail;
 
     protected bool mouseEntered;
 
@@ -43,9 +44,9 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
                 Debug.Log("Ent2");
                 animator.SetBool("isCutting", true);
                 StartCoroutine(DestroyObj());
-                //Destroy(this.gameObject);
+
             }
-        }
+        }        
     }
     protected void Force()
     {
@@ -75,7 +76,6 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
 
     void OnMouseDown()
     {
-        
        // Destroy(this.gameObject);
     }
 
