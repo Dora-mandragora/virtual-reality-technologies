@@ -9,8 +9,7 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
     public Transform position;
     protected Rigidbody2D rigidbody;
 
-    public Animator animator;
-    public Transform trail;
+    public Animator animator;    
 
     protected bool mouseEntered;
 

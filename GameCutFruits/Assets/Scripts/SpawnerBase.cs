@@ -11,6 +11,8 @@ public class SpawnerBase : MonoBehaviour
     public float TimeSpawn = 1000;
     ///public event Action spawn;
 
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,8 @@ public class SpawnerBase : MonoBehaviour
         yield return new WaitForSeconds(TimeSpawn);
         Instantiate(obj, position.position, Quaternion.identity);
         Repeat();
-    }  
+    }
+
+    
 
 }
