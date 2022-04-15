@@ -9,10 +9,13 @@ public class Collector : MonoBehaviour
 
     public List<SpawnerBase> spawners;
 
+    public int miss = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(collision.gameObject);
+        Debug.Log("Miss fruit: " + miss);
+        miss++;
     }
 
 

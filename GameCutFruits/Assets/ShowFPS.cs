@@ -18,6 +18,6 @@ public class ShowFPS : MonoBehaviour
         style.normal.textColor = Color.yellow;
         style.fontStyle = FontStyle.Bold;
         fps = 1.0f / Time.deltaTime;
-        GUILayout.Label("" + (int)fps, style);        
+        //GUILayout.Label("" + (int)fps, style);        
     }
 }

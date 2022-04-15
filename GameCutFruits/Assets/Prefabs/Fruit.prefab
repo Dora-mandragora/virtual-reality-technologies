@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1633981798344999887}
   - component: {fileID: 3967684013237822595}
   - component: {fileID: -2979697863386338239}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   sprites: []
   position: {fileID: 0}
   animator: {fileID: 2708942127966979035}
-  force: 0
+  force: 20
 --- !u!212 &-2979697863386338239
 SpriteRenderer:
   m_ObjectHideFlags: 0

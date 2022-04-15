@@ -3,20 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bomb : ObjectBase
-{    
+{
+    private bool IsCutting = false;
+
     void Update()
     {
         if (mouseEntered)
-        {
-            Debug.Log("EntB");
+        {            
             if (Input.GetMouseButton(0))
             {
                 Debug.Log("Ent2B");
-                animator.SetBool("isCutting", true);
-                StartCoroutine(DestroyObj());
+                //animator.SetBool("isCutting", true);
+                IsCutting = true;
+                //StartCoroutine(DestroyObj());                
+                //завершить игру
                 //Destroy(this.gameObject);
+
             }
         }
     }
+
+    public new bool IsFruit() => false;
 }
    

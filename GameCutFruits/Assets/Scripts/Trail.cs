@@ -10,10 +10,12 @@ public class Trail : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            //Debug.Log("TrailEnter");
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pos.z = -1;
             trail.position = pos;
-
         }
-    }
+    } 
+
+
 }

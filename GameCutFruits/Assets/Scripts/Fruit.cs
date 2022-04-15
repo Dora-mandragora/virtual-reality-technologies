@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class Fruit : ObjectBase
 {
+    
+    //переделать эту модель - повесить ее на manager?
     void Update()
     {
         if (mouseEntered)
-        {
-            Debug.Log("EntF");
+        {            
             if (Input.GetMouseButton(0))
             {
                 Debug.Log("Ent2F");
-                animator.SetBool("isCutting", true);
-                StartCoroutine(DestroyObj());
-                              
+                //animator.SetBool("isCutting", true);
+
+                //StartCoroutine(DestroyObj());               
+                //DestroyObj();                
+                //Destroy(this.gameObject);
             }
         }
 
        
     }
+
+    public new bool IsFruit() => true;
 }
