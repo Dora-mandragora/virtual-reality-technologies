@@ -12,7 +12,7 @@ public class Bomb : ObjectBase
         {            
             if (Input.GetMouseButton(0))
             {
-                Debug.Log("Ent2B");
+                //Debug.Log("Ent2B");
                 //animator.SetBool("isCutting", true);
                 IsCutting = true;
                 //StartCoroutine(DestroyObj());                
@@ -23,6 +23,5 @@ public class Bomb : ObjectBase
         }
     }
 
-    public new bool IsFruit() => false;
 }
    

@@ -13,9 +13,13 @@ public class Collector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        var obj = collision.GetComponent<ObjectBase>();
         Destroy(collision.gameObject);
-        Debug.Log("Miss fruit: " + miss);
-        miss++;
+        if (obj is Fruit)
+        {
+            miss++;
+            Debug.Log("Miss fruit: " + miss);
+        }
     }
 
 
@@ -29,4 +33,5 @@ public class Collector : MonoBehaviour
     {
         
     }
+
 }

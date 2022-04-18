@@ -22,14 +22,14 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
         spriteRenderer = GetComponent<SpriteRenderer>();
         position = GetComponent<Transform>();
         rigidbody = GetComponent<Rigidbody2D>();
-       
 
-        //var spriteNum = 0;
-        //if (sprites.Count != 0)
-        //{
-        //    spriteNum = Random.Range(0, sprites.Count - 1);
-        //    spriteRenderer.sprite = sprites[spriteNum];
-        //}
+
+        var spriteNum = 0;
+        if (sprites.Count != 0)
+        {
+            spriteNum = Random.Range(0, sprites.Count - 1);
+            spriteRenderer.sprite = sprites[spriteNum];
+        }
         Force();
     }
     
@@ -83,7 +83,6 @@ public class ObjectBase : MonoBehaviour //сделать наследрвание для фруктов и бом
         Destroy(this.gameObject);
     }
 
-    public bool IsFruit() => false;
 
 
 }

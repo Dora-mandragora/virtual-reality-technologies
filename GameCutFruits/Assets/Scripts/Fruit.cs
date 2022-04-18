@@ -12,7 +12,7 @@ public class Fruit : ObjectBase
         {            
             if (Input.GetMouseButton(0))
             {
-                Debug.Log("Ent2F");
+                //Debug.Log("Ent2F");
                 //animator.SetBool("isCutting", true);
 
                 //StartCoroutine(DestroyObj());               
@@ -24,5 +24,4 @@ public class Fruit : ObjectBase
        
     }
 
-    public new bool IsFruit() => true;
 }

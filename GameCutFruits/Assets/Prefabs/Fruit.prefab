@@ -44,7 +44,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2708942127966978981}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f297823de7c36484c9cab0487b9d7c24, type: 2}
   m_CullingMode: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2708942127966978981}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 269a3f421400d524394b5e6794cb58a9, type: 3}
   m_Name: 
@@ -127,7 +127,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1fb8fadc2bf6114692cb29c0ea3f483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites: []
+  sprites:
+  - {fileID: 21300000, guid: bf7a98a0915a4ed44846684d0f6a5282, type: 3}
+  - {fileID: 21300000, guid: 1b35f6228e37814438ebf33f77a7d539, type: 3}
+  - {fileID: 21300000, guid: fe3db270fb4c573498967a94ffcc1895, type: 3}
+  - {fileID: 21300000, guid: d7ab3caeb52cbc24ebd0fd0cfb6b9803, type: 3}
+  - {fileID: 21300000, guid: eeae7fc46574d6c41836c007ede25dbb, type: 3}
+  - {fileID: 21300000, guid: 6adc10d242123634484e61dd5010b01f, type: 3}
+  - {fileID: 21300000, guid: 63562843ce13f0f4dabef03ae2b6d0c5, type: 3}
+  - {fileID: 21300000, guid: 603a70ca5daa6f74b8ee69ef352f2565, type: 3}
+  - {fileID: 21300000, guid: 57d43ddf00dbdca488dcf8742bdf016c, type: 3}
   position: {fileID: 0}
   animator: {fileID: 2708942127966979035}
   force: 20
