@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class MenuOptions : MonoBehaviour
 {
     public static bool IsGamePause = false;
     public GameObject PauseMenuUI;
     // Update is called once per frame
     void Update()
     {
+        //либо разделить логику ESC, либо на разные кнопки сразу вешать другие действия (без учета ESC)
+        //а то при каждом нажатии ESC возникает фигня всякая
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if (IsGamePause)
@@ -31,7 +33,7 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         IsGamePause = false;
-        SceneManager.LoadScene("Pixels");
+        SceneManager.LoadScene("Game");
     }
 
     public void Pause()

@@ -6,7 +6,8 @@ public class Manager : MonoBehaviour
 {
     public int globalScore;
     private int bestScore;
-    private int combo = 0;
+    private Vector3 lastMousePos;
+    private bool isGameEnd;
 
     public Collider2D[] gameObjects;
 
@@ -16,12 +17,17 @@ public class Manager : MonoBehaviour
     public GameObject FruitPrefab;
     public GameObject BombPrefab;
 
+    public GameObject EndGameUI;
+
     public Font font;
 
     GUIStyle style = new GUIStyle();
         
     void Start()
     {
+        EndGameUI.SetActive(false);
+        isGameEnd = false;
+
         style.normal.textColor = Color.yellow;        
         style.fontSize = 40;
         style.font = font;
@@ -64,32 +70,40 @@ public class Manager : MonoBehaviour
 
     void Update()
     {
-        //проверять мин скорость
-        var mousePos = Input.mousePosition;
-        //var thisFrameFruits = Physics2D.OverlapPointAll(new Vector2(trail.transform.position.x, trail.transform.position.y), LayerMask.GetMask("Fruits"));
-        var thisFrameFruits = Physics2D.OverlapBoxAll(new Vector2(trail.transform.position.x, trail.transform.position.y), new Vector2(1,1),0);
-        //Debug.Log(thisFrameFruits.Length);
-        foreach(var obj in thisFrameFruits)
+        if (end.GetComponent<Collector>().miss >= 3)
+            EndGame();
+        if (Input.GetMouseButton(0) && Time.timeScale != 0 && !isGameEnd)
         {
-            var obj2 = obj.GetComponent<ObjectBase>();
-            //не работает корректно, потому что проверку через дочерний класс не организовать - если это будет бомба, то происходит ошибка
-            //if (obj.GetComponent<Fruit>().IsFruit())
-            if(obj2 is Fruit)
-            {
-                obj.GetComponent<ObjectBase>().Destroy();
-                globalScore += 10;
-            }
-            //if (!obj.GetComponent<Bomb>().IsFruit())
-            else
-            {
-                obj.GetComponent<ObjectBase>().Destroy();
-                globalScore -= 10;
-            }
+            //проверять мин скорость            
+            var thisFrameFruits = Physics2D.OverlapBoxAll(new Vector2(trail.transform.position.x, trail.transform.position.y), new Vector2(1, 1), 0);
+            if ((Input.mousePosition - lastMousePos).sqrMagnitude > 9f)
+                foreach (var obj in thisFrameFruits)
+                {
+                    var obj2 = obj.GetComponent<ObjectBase>();
+                    if (obj2 is Fruit)
+                    {                       
+                        obj.GetComponent<ObjectBase>().Destroy();
+                        globalScore += 10;
+                    }
+                    else
+                    {
+                        EndGame();
+                        obj.GetComponent<ObjectBase>().Destroy();
+                        //globalScore -= 10;
+                    }
+                }
+            lastMousePos = Input.mousePosition;
+            //
         }
-        //if (end.GetComponent<Collector>().miss >= 3) Debug.Log("YOU LOSE!!!");
-        
+
     }
 
+    void EndGame()
+    {        
+        StopAllCoroutines();
+        isGameEnd = true;
+        EndGameUI.SetActive(true);
+    }
 
     private void OnGUI()
     {
